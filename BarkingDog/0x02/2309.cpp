@@ -4,7 +4,7 @@ using namespace std;
 
 int arr[9], sum;
 
-std::pair<int, int> solve()
+pair<int, int> solve()
 {
 	// 전체 합에서 2명 빼면 100
 	for(int i = 0; i < 9; i++)
