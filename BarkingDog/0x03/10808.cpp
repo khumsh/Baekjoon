@@ -9,9 +9,7 @@ int main()
 	cin >> input;
 	
 	for(char a : input)
-	{
 		cnt[a - 'a']++;
-	}
 	
 	for(int i = 0; i < 26; i++)
 		cout << cnt[i] << " ";
