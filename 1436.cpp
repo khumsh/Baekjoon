@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+https://www.acmicpc.net/problem/1436
+
 int t;
 
 bool contain666(int number)
@@ -18,7 +20,7 @@ int main()
 	// input
 	cin >> t;
 	
-	int n;
+	int n = 666;
 	while(t > 0)
 	{
 		if (contain666(n))
