@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-https://www.acmicpc.net/problem/1436
+// https://www.acmicpc.net/problem/1436
 
 int t;
 
