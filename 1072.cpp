@@ -2,20 +2,11 @@
 using namespace std;
 typedef long long ll;
 
-const ll MAX = 1e9;
-
-ll x, y, z, ret = MAX;
+ll x, y, z, ret = -1;
 
 ll getWinRate(ll total, ll win)
 {
 	return win * 100 / total;
-}
-
-bool check(ll mid)
-{
-	//cout << "z: " << z << ", mid: " << mid << ", winRate: " << getWinRate(x + mid, y + mid) << "\n";
-
-	return getWinRate(x + mid, y + mid) > z;
 }
 
 int main()
@@ -27,20 +18,13 @@ int main()
 	cin >> x >> y;
 	z = getWinRate(x, y);
 	
-	// z가 99 이상이면 추가 게임을 해도 승률이 오르지 않으므로 바로 -1 출력
-    if (z >= 99) 
-	{
-        cout << -1 << "\n";
-        return 0;
-    }
-	
-	ll l = 1, r = MAX, mid;
+	ll l = 1, r = 1e9, mid;
 	while (l <= r)
 	{
 		mid = (l + r) / 2;
-		if (check(mid))
+		if (getWinRate(x + mid, y + mid) > z)
 		{
-			ret = min(mid, ret);
+			ret = mid;
 			r = mid - 1;
 		}
 		else
@@ -48,9 +32,6 @@ int main()
 			l = mid + 1;
 		}
 	}
-	
-	if (ret == MAX)
-		ret = -1;
 		
 	cout << ret << "\n";
 	
